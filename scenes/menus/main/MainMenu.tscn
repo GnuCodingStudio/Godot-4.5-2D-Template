@@ -47,73 +47,38 @@ color = Color(0.583954, 0, 0.695312, 1)
 
 [node name="GlobalMargin" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
+offset_bottom = 366.0
 grow_horizontal = 2
-grow_vertical = 2
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 40
 
-[node name="Center" type="CenterContainer" parent="GlobalMargin"]
+[node name="Headlines" type="VBoxContainer" parent="GlobalMargin"]
 layout_mode = 2
-
-[node name="VBox" type="VBoxContainer" parent="GlobalMargin/Center"]
-layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="Title" type="Label" parent="GlobalMargin/Center/VBox"]
+[node name="Title" type="Label" parent="GlobalMargin/Headlines"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"BigTitle"
 text = "GAME_NAME"
 
-[node name="SubTitle" type="Label" parent="GlobalMargin/Center/VBox"]
+[node name="SubTitle" type="Label" parent="GlobalMargin/Headlines"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"SubTitle"
 text = "GAME_TAGLINE"
 
-[node name="HSeparator" type="HSeparator" parent="GlobalMargin/Center/VBox"]
+[node name="HSeparator" type="HSeparator" parent="GlobalMargin/Headlines"]
 layout_mode = 2
 theme_override_constants/separation = 60
 theme_override_styles/separator = SubResource("StyleBoxEmpty_t1ilb")
-
-[node name="StartButton" type="Button" parent="GlobalMargin/Center/VBox"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-focus_neighbor_top = NodePath("../QuitButton")
-focus_neighbor_bottom = NodePath("../CreditsButton")
-focus_next = NodePath("../CreditsButton")
-focus_previous = NodePath("../QuitButton")
-text = "MAIN_START_BUTTON"
-
-[node name="CreditsButton" type="Button" parent="GlobalMargin/Center/VBox"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-focus_neighbor_top = NodePath("../StartButton")
-focus_neighbor_bottom = NodePath("../QuitButton")
-focus_next = NodePath("../QuitButton")
-focus_previous = NodePath("../StartButton")
-text = "MAIN_CREDITS_BUTTON"
-
-[node name="QuitButton" type="Button" parent="GlobalMargin/Center/VBox"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-focus_neighbor_top = NodePath("../CreditsButton")
-focus_neighbor_bottom = NodePath("../StartButton")
-focus_next = NodePath("../StartButton")
-focus_previous = NodePath("../CreditsButton")
-text = "MAIN_QUIT_BUTTON"
 
 [node name="TemplateFromGCS" type="Label" parent="GlobalMargin"]
 visible = false
@@ -122,6 +87,49 @@ size_flags_horizontal = 0
 size_flags_vertical = 8
 text = "A Gnu Coding Studio's template"
 script = SubResource("GDScript_b4ev4")
+
+[node name="Menu" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 332.0
+offset_right = 844.0
+offset_bottom = 628.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="StartButton" type="Button" parent="Menu"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_bottom = NodePath("../CreditsButton")
+focus_next = NodePath("../CreditsButton")
+focus_previous = NodePath("../QuitButton")
+text = "MAIN_START_BUTTON"
+
+[node name="CreditsButton" type="Button" parent="Menu"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../StartButton")
+focus_neighbor_bottom = NodePath("../QuitButton")
+focus_next = NodePath("../QuitButton")
+focus_previous = NodePath("../StartButton")
+text = "MAIN_CREDITS_BUTTON"
+
+[node name="QuitButton" type="Button" parent="Menu"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../CreditsButton")
+focus_neighbor_bottom = NodePath("../StartButton")
+focus_next = NodePath("../StartButton")
+focus_previous = NodePath("../CreditsButton")
+text = "MAIN_QUIT_BUTTON"
 
 [node name="QuitDialog" parent="." instance=ExtResource("3_pus6v")]
 unique_name_in_owner = true
@@ -141,7 +149,7 @@ function = "appear"
 help = "Show info about the template used to create this game."
 parameters = Array[String](["time:float:0.6"])
 
-[connection signal="pressed" from="GlobalMargin/Center/VBox/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="GlobalMargin/Center/VBox/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="GlobalMargin/Center/VBox/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Menu/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Menu/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Menu/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="on_confirm" from="QuitDialog" to="." method="_on_quit_dialog_confirmed"]
