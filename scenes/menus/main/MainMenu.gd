@@ -2,11 +2,11 @@ extends Control
 
 @onready var quit_dialog = %QuitDialog
 @onready var start_button: Button = %StartButton
-
+@onready var menu = %Menu
 
 func _ready():
 	ProgressionService.init()
-	start_button.grab_focus()
+	menu.animate_buttons_appearance(0.4, 0.2, -100)
 
 
 func _on_start_button_pressed():
