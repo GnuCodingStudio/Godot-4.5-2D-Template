@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl8pxadmu8wy0"]
+
+[ext_resource type="PackedScene" uid="uid://bkwtfq25td34m" path="res://assets/model/wall-corner.fbx" id="1_shnss"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dbxnw"]
+size = Vector3(3, 3, 3)
+
+[node name="WallCorner" type="StaticBody3D"]
+collision_layer = 2
+
+[node name="wall-corner" parent="." instance=ExtResource("1_shnss")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_dbxnw")

@@ -93,6 +93,11 @@ action_activate={
 
 locale/translations=PackedStringArray("res://resources/localization/MenuTranslations.en.translation", "res://resources/localization/MenuTranslations.fr.translation")
 
+[layer_names]
+
+3d_physics/layer_1="player"
+3d_physics/layer_2="wall-n-floor"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
