@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://8jl556gvdqn7"]
+
+[ext_resource type="PackedScene" uid="uid://dd4l0p6o11gja" path="res://assets/model/wall-door-rotate.fbx" id="1_566yj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j7xx1"]
+size = Vector3(3, 3, 2)
+
+[node name="Door" type="StaticBody3D"]
+collision_layer = 2
+
+[node name="wall-door-rotate" parent="." instance=ExtResource("1_566yj")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_j7xx1")
