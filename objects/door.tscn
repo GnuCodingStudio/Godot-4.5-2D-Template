@@ -16,13 +16,21 @@ script = ExtResource("1_j7xx1")
 [node name="wall-door-rotate" parent="." unique_id=2047957127 instance=ExtResource("1_566yj")]
 
 [node name="ClosedShape" type="CollisionShape3D" parent="." unique_id=1896595236]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 shape = SubResource("BoxShape3D_khffo")
+debug_color = Color(1, 0, 0, 0.41960785)
 
 [node name="OpenShape1" type="CollisionShape3D" parent="." unique_id=927777706]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 1.5, 0)
 shape = SubResource("BoxShape3D_j7xx1")
+disabled = true
+debug_color = Color(1, 0, 0, 0.41960785)
 
 [node name="OpenShape2" type="CollisionShape3D" parent="." unique_id=734907090]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 1.5, 0)
 shape = SubResource("BoxShape3D_j7xx1")
+disabled = true
+debug_color = Color(1, 0, 0, 0.41960785)

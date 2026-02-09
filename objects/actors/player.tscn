@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvvit3q4hmq8r"]
+[gd_scene format=3 uid="uid://cvvit3q4hmq8r"]
 
 [ext_resource type="Script" uid="uid://cqq7f7vb4h0re" path="res://scenes/levels/player.gd" id="1_436lu"]
 
@@ -6,25 +6,25 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_52kye"]
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1631137706]
 collision_mask = 3
 script = ExtResource("1_436lu")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=450940961]
 mesh = SubResource("CapsuleMesh_52kye")
 skeleton = NodePath("../..")
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1559052446]
 shape = SubResource("CapsuleShape3D_52kye")
 metadata/_edit_lock_ = true
 
-[node name="CameraNode" type="Node3D" parent="."]
+[node name="CameraNode" type="Node3D" parent="." unique_id=624974415]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7087607, 0)
 
-[node name="SpringArm3D" type="SpringArm3D" parent="CameraNode"]
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraNode" unique_id=972367107]
 collision_mask = 3
 spring_length = 3.0
 
-[node name="Camera3D" type="Camera3D" parent="CameraNode/SpringArm3D"]
+[node name="Camera3D" type="Camera3D" parent="CameraNode/SpringArm3D" unique_id=1785858425]
 transform = Transform3D(1, 0, 0, 0, 0.88604987, 0.46358985, 0, -0.46358985, 0.88604987, 0, 0, 2.9991646)
