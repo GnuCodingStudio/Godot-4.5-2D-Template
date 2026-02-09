@@ -1,17 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://8jl556gvdqn7"]
+[gd_scene format=3 uid="uid://8jl556gvdqn7"]
 
 [ext_resource type="PackedScene" uid="uid://dd4l0p6o11gja" path="res://assets/model/wall-door-rotate.fbx" id="1_566yj"]
 [ext_resource type="Script" uid="uid://di10y6tl2xd1g" path="res://objects/door.gd" id="1_j7xx1"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_j7xx1"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_khffo"]
 size = Vector3(3, 3, 2)
 
-[node name="Door" type="StaticBody3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_j7xx1"]
+size = Vector3(0.5, 3, 2)
+
+[node name="Door" type="StaticBody3D" unique_id=1246848852]
 collision_layer = 2
 script = ExtResource("1_j7xx1")
 
-[node name="wall-door-rotate" parent="." instance=ExtResource("1_566yj")]
+[node name="wall-door-rotate" parent="." unique_id=2047957127 instance=ExtResource("1_566yj")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="ClosedShape" type="CollisionShape3D" parent="." unique_id=1896595236]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_khffo")
+
+[node name="OpenShape1" type="CollisionShape3D" parent="." unique_id=927777706]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 1.5, 0)
+shape = SubResource("BoxShape3D_j7xx1")
+
+[node name="OpenShape2" type="CollisionShape3D" parent="." unique_id=734907090]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 1.5, 0)
 shape = SubResource("BoxShape3D_j7xx1")
