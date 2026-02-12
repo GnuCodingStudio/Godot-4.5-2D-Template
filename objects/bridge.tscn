@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d1f04fay03qju"]
+
+[ext_resource type="PackedScene" uid="uid://jyiwf2l1h3w0" path="res://objects/platform.tscn" id="1_2e2mj"]
+
+[node name="Bridge" type="Node3D" unique_id=654633323]
+
+[node name="Platform1" parent="." unique_id=284491750 instance=ExtResource("1_2e2mj")]
+
+[node name="Platform2" parent="." unique_id=2142671919 instance=ExtResource("1_2e2mj")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -3, 0, 0)
+
+[node name="Platform3" parent="." unique_id=1696483373 instance=ExtResource("1_2e2mj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="Platform4" parent="." unique_id=1920360530 instance=ExtResource("1_2e2mj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1025770154]
