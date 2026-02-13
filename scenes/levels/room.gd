@@ -8,6 +8,21 @@ extends Node3D
 @onready var enter_door_2: Door = %EnterDoor2
 @onready var enter_door_3: Door = %EnterDoor3
 
+
+func _ready() -> void:
+	var result = randi_range(5, 95)
+	var right_door = randi_range(0, 2)
+	var doors = [exit_door_1, exit_door_2, exit_door_3]
+	
+	for d in 3:
+		var operand1 = randi_range(0, result)
+		var operand2 = result - operand1
+		
+		if right_door != d:
+			operand2 += randi_range(10, 30)
+			
+		doors[d].set_operation("%d = %d + %d" % [result, operand1, operand2])
+
 func open_enter_doors() -> void:
 	enter_door_1.open()
 	enter_door_2.open()

@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://d1f04fay03qju"]
 
+[ext_resource type="Script" uid="uid://c63moil3o6njp" path="res://objects/bridge.gd" id="1_0tjhg"]
 [ext_resource type="PackedScene" uid="uid://jyiwf2l1h3w0" path="res://objects/platform.tscn" id="1_2e2mj"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_0tjhg"]
+size = Vector3(1, 2, 2.2)
+
 [node name="Bridge" type="Node3D" unique_id=654633323]
+script = ExtResource("1_0tjhg")
 
 [node name="Platform1" parent="." unique_id=284491750 instance=ExtResource("1_2e2mj")]
 
@@ -15,4 +20,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
 [node name="Platform4" parent="." unique_id=1920360530 instance=ExtResource("1_2e2mj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1025770154]
+[node name="Detection" type="Area3D" parent="." unique_id=387004286]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4809122, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Detection" unique_id=1254275130]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0)
+shape = SubResource("BoxShape3D_0tjhg")
+debug_color = Color(0, 1, 0, 0.41960785)
+
+[connection signal="body_entered" from="Detection" to="." method="_on_body_detected"]
