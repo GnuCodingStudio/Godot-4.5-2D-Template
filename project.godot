@@ -46,6 +46,10 @@ folder_colors={
 "res://services/": "green"
 }
 
+[global_group]
+
+player=""
+
 [gui]
 
 theme/custom="res://resources/theme/MenuTheme.tres"

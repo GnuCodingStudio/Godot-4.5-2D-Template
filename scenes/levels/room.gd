@@ -9,8 +9,11 @@ extends Node3D
 @onready var enter_door_3: Door = %EnterDoor3
 
 
+var result: int
+
+
 func _ready() -> void:
-	var result = randi_range(5, 95)
+	result = randi_range(5, 95)
 	var right_door = randi_range(0, 2)
 	var doors = [exit_door_1, exit_door_2, exit_door_3]
 	
@@ -21,7 +24,7 @@ func _ready() -> void:
 		if right_door != d:
 			operand2 += randi_range(10, 30)
 			
-		doors[d].set_operation("%d = %d + %d" % [result, operand1, operand2])
+		doors[d].set_operation("%d + %d" % [operand1, operand2])
 
 func open_enter_doors() -> void:
 	enter_door_1.open()
@@ -48,3 +51,4 @@ func _on_body_entered(body: Node3D) -> void:
 	if body is Player:
 		close_enter_doors()
 		open_exit_doors()
+		body.show_hud("? = %d" % result)

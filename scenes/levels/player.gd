@@ -8,13 +8,13 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var rotation_speed = 10.0
 
 @onready var camera_node: Node3D = $CameraNode
+@onready var hud_label: Label = %HudLabel
 
 var camera_rotation_x = 0.0
 
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
@@ -31,7 +31,6 @@ func _unhandled_input(event):
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -50,3 +49,10 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, move_speed * delta * 3.0)
 	
 	move_and_slide()
+
+
+func show_hud(message: String) -> void:
+	hud_label.text = message
+
+func clear_hud() -> void:
+	hud_label.text = ""

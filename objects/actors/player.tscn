@@ -6,7 +6,12 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_52kye"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1631137706]
+[sub_resource type="LabelSettings" id="LabelSettings_436lu"]
+font_size = 60
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1631137706 groups=["player"]]
 collision_mask = 3
 script = ExtResource("1_436lu")
 
@@ -28,3 +33,20 @@ spring_length = 3.0
 
 [node name="Camera3D" type="Camera3D" parent="CameraNode/SpringArm3D" unique_id=1785858425]
 transform = Transform3D(1, 0, 0, 0, 0.88604987, 0.46358985, 0, -0.46358985, 0.88604987, 0, 0, 2.9991646)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=172012519]
+
+[node name="HudLabel" type="Label" parent="HUD" unique_id=757639109]
+unique_name_in_owner = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_top = -98.0
+offset_right = 54.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_436lu")
