@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://dr4dxfilwdh1c" path="res://scenes/levels/test.gd" id="1_uyl1e"]
 [ext_resource type="PackedScene" uid="uid://cvvit3q4hmq8r" path="res://objects/actors/player.tscn" id="5_7115g"]
 [ext_resource type="PackedScene" uid="uid://jyiwf2l1h3w0" path="res://objects/platform.tscn" id="5_koekj"]
-[ext_resource type="PackedScene" uid="uid://d1f04fay03qju" path="res://objects/bridge.tscn" id="5_kw13u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uyl1e"]
 
@@ -22,27 +21,12 @@ script = ExtResource("1_uyl1e")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.953, -1.1, 12.46654)
 
 [node name="Room1" parent="." unique_id=832217031 instance=ExtResource("1_52kye")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.016171455, -0.007827759, 0.0055933)
 
 [node name="Room2" parent="." unique_id=1889560401 instance=ExtResource("1_52kye")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.016171455, -0.007827759, -26.867584)
-
-[node name="bridges" type="Node3D" parent="." unique_id=2027376970]
-
-[node name="Bridge1" parent="bridges" unique_id=654633323 node_paths=PackedStringArray("previous_room", "next_room") instance=ExtResource("5_kw13u")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, -1.1, -5.323)
-previous_room = NodePath("../../Room1")
-next_room = NodePath("../../Room2")
-
-[node name="Bridge2" parent="bridges" unique_id=1080371984 node_paths=PackedStringArray("previous_room", "next_room") instance=ExtResource("5_kw13u")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 11, -1.1, -5.323)
-previous_room = NodePath("../../Room1")
-next_room = NodePath("../../Room2")
-
-[node name="Bridge3" parent="bridges" unique_id=1926492391 node_paths=PackedStringArray("previous_room", "next_room") instance=ExtResource("5_kw13u")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 17, -1.1, -5.323)
-previous_room = NodePath("../../Room1")
-next_room = NodePath("../../Room2")
 
 [node name="CharacterBody3D" parent="." unique_id=1197178204 instance=ExtResource("5_7115g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.159171, 1.89205, 12.78651)

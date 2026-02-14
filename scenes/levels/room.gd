@@ -9,6 +9,9 @@ extends Node3D
 @onready var enter_door_3: Door = %EnterDoor3
 
 
+signal player_on_bridge(player: Player)
+
+
 var result: int
 
 
@@ -52,3 +55,9 @@ func _on_body_entered(body: Node3D) -> void:
 		close_enter_doors()
 		open_exit_doors()
 		body.show_hud("? = %d" % result)
+
+
+func _player_detected_on_bridge(player: Player) -> void:
+	close_exit_doors()
+	player.clear_hud()
+	player_on_bridge.emit(player)
