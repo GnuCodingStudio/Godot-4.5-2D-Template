@@ -1,15 +1,18 @@
 [gd_scene format=3 uid="uid://jyiwf2l1h3w0"]
 
+[ext_resource type="Script" uid="uid://b12jkt21rreup" path="res://objects/platform.gd" id="1_8voax"]
 [ext_resource type="PackedScene" uid="uid://bkhud3ipa361t" path="res://assets/model/structure-platform.fbx" id="1_y5dbh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y5dbh"]
 size = Vector3(3, 1.1, 3)
 
 [node name="Platform" type="StaticBody3D" unique_id=284491750]
+script = ExtResource("1_8voax")
 
 [node name="platform" parent="." unique_id=1523484615 instance=ExtResource("1_y5dbh")]
 transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1351299995]
+[node name="CollisionShape" type="CollisionShape3D" parent="." unique_id=1351299995]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5592032, 0)
 shape = SubResource("BoxShape3D_y5dbh")

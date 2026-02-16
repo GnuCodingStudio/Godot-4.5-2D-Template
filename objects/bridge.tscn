@@ -6,6 +6,9 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_0tjhg"]
 size = Vector3(1, 2, 2.2)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_s7roc"]
+size = Vector3(12, 4, 0.5)
+
 [node name="Bridge" type="Node3D" unique_id=654633323]
 script = ExtResource("1_0tjhg")
 
@@ -15,9 +18,11 @@ script = ExtResource("1_0tjhg")
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -3, 0, 0)
 
 [node name="Platform3" parent="." unique_id=1696483373 instance=ExtResource("1_2e2mj")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
 
 [node name="Platform4" parent="." unique_id=1920360530 instance=ExtResource("1_2e2mj")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0)
 
 [node name="Detection" type="Area3D" parent="." unique_id=387004286]
@@ -27,5 +32,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2703457, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0)
 shape = SubResource("BoxShape3D_0tjhg")
 debug_color = Color(0, 1, 0, 0.41960785)
+
+[node name="InvisibleWall1" type="StaticBody3D" parent="." unique_id=1432544830]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 2, 2)
+collision_layer = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWall1" unique_id=159586650]
+shape = SubResource("BoxShape3D_s7roc")
+debug_color = Color(1, 0, 0, 0.41960785)
+metadata/_edit_lock_ = true
+
+[node name="InvisibleWall2" type="StaticBody3D" parent="." unique_id=146649068]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 2, -2)
+collision_layer = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWall2" unique_id=945460186]
+shape = SubResource("BoxShape3D_s7roc")
+debug_color = Color(1, 0, 0, 0.41960785)
+metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="Detection" to="." method="_on_body_detected"]

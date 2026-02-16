@@ -105,6 +105,7 @@ locale/translations=PackedStringArray("res://resources/localization/MenuTranslat
 
 3d_physics/layer_1="player"
 3d_physics/layer_2="wall-n-floor"
+3d_physics/layer_3="invisible-wall"
 
 [rendering]
 

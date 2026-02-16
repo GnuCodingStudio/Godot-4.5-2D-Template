@@ -7,6 +7,9 @@ extends Node3D
 @onready var enter_door_1: Door = %EnterDoor1
 @onready var enter_door_2: Door = %EnterDoor2
 @onready var enter_door_3: Door = %EnterDoor3
+@onready var bridge_1: Bridge = %Bridge1
+@onready var bridge_2: Bridge = %Bridge2
+@onready var bridge_3: Bridge = %Bridge3
 
 
 signal player_on_bridge(player: Player)
@@ -18,14 +21,18 @@ var result: int
 func _ready() -> void:
 	result = randi_range(5, 95)
 	var right_door = randi_range(0, 2)
-	var doors = [exit_door_1, exit_door_2, exit_door_3]
+	var doors: Array[Door] = [exit_door_1, exit_door_2, exit_door_3]
+	var bridges: Array[Bridge] = [bridge_1, bridge_2, bridge_3]
 	
 	for d in 3:
 		var operand1 = randi_range(0, result)
 		var operand2 = result - operand1
 		
-		if right_door != d:
+		if right_door == d:
+			bridges[d].set_valid()
+		else:
 			operand2 += randi_range(10, 30)
+			bridges[d].set_invalid()
 			
 		doors[d].set_operation("%d + %d" % [operand1, operand2])
 

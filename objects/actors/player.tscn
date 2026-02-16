@@ -12,7 +12,7 @@ outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=1631137706 groups=["player"]]
-collision_mask = 3
+collision_mask = 7
 script = ExtResource("1_436lu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=450940961]
