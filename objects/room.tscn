@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://rir3i0o02c71"]
 
 [ext_resource type="PackedScene" uid="uid://nu2wev2fynfl" path="res://objects/floor.tscn" id="1_48f77"]
-[ext_resource type="Script" uid="uid://chfp0foydv2sc" path="res://scenes/levels/room.gd" id="1_ms3in"]
+[ext_resource type="Script" uid="uid://chfp0foydv2sc" path="res://objects/room.gd" id="1_ms3in"]
 [ext_resource type="PackedScene" uid="uid://ddaeyabfq777e" path="res://objects/wall.tscn" id="2_ms3in"]
 [ext_resource type="PackedScene" uid="uid://8jl556gvdqn7" path="res://objects/door.tscn" id="3_3pgh2"]
 [ext_resource type="PackedScene" uid="uid://dl8pxadmu8wy0" path="res://objects/wall-corner.tscn" id="4_bxelx"]
@@ -260,6 +260,10 @@ collision_layer = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8632679, 0)
 shape = SubResource("BoxShape3D_ms3in")
 debug_color = Color(0, 1, 0, 0.41960785)
+
+[node name="EndMarker" type="Marker3D" parent="." unique_id=1754860211]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -26)
 
 [connection signal="on_player_detected" from="bridges/Bridge1" to="." method="_player_detected_on_bridge"]
 [connection signal="on_player_detected" from="bridges/Bridge2" to="." method="_player_detected_on_bridge"]

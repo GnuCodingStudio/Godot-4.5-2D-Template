@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://6qkqlwbw3b7c"]
 
-[ext_resource type="PackedScene" uid="uid://rir3i0o02c71" path="res://scenes/levels/room.tscn" id="1_52kye"]
+[ext_resource type="PackedScene" uid="uid://rir3i0o02c71" path="res://objects/room.tscn" id="1_52kye"]
 [ext_resource type="Script" uid="uid://dr4dxfilwdh1c" path="res://scenes/levels/test.gd" id="1_uyl1e"]
 [ext_resource type="PackedScene" uid="uid://cvvit3q4hmq8r" path="res://objects/actors/player.tscn" id="5_7115g"]
 [ext_resource type="PackedScene" uid="uid://jyiwf2l1h3w0" path="res://objects/platform.tscn" id="5_koekj"]
@@ -23,10 +23,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.047, -1.1, -0.2)
 [node name="Room1" parent="." unique_id=832217031 instance=ExtResource("1_52kye")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.016171455, -0.007827759, 0.0055933)
-
-[node name="Room2" parent="." unique_id=1889560401 instance=ExtResource("1_52kye")]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.016171455, -0.007827759, -26.867584)
 
 [node name="CharacterBody3D" parent="." unique_id=1197178204 instance=ExtResource("5_7115g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1591711, 1.89205, 0.78651047)

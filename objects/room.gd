@@ -7,9 +7,12 @@ extends Node3D
 @onready var enter_door_1: Door = %EnterDoor1
 @onready var enter_door_2: Door = %EnterDoor2
 @onready var enter_door_3: Door = %EnterDoor3
+
 @onready var bridge_1: Bridge = %Bridge1
 @onready var bridge_2: Bridge = %Bridge2
 @onready var bridge_3: Bridge = %Bridge3
+
+@onready var end_marker: Marker3D = %EndMarker
 
 
 signal player_on_bridge(player: Player)
@@ -55,6 +58,9 @@ func close_exit_doors() -> void:
 	exit_door_1.close()
 	exit_door_2.close()
 	exit_door_3.close()
+
+func get_end_global_position() -> Vector3:
+	return end_marker.global_position
 
 
 func _on_body_entered(body: Node3D) -> void:
