@@ -16,9 +16,11 @@ extends Node3D
 
 
 signal player_on_bridge(player: Player)
+signal player_entered(player: Player)
 
 
 var result: int
+var _already_entered := false
 
 
 func _ready() -> void:
@@ -64,10 +66,12 @@ func get_end_global_position() -> Vector3:
 
 
 func _on_body_entered(body: Node3D) -> void:
-	if body is Player:
+	if body is Player && not _already_entered:
+		_already_entered = true
 		close_enter_doors()
 		open_exit_doors()
 		body.show_hud("? = %d" % result)
+		player_entered.emit(body)
 
 
 func _player_detected_on_bridge(player: Player) -> void:
