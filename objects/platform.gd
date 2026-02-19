@@ -5,4 +5,7 @@ extends StaticBody3D
 
 
 func enable_collistion(enabled: bool) -> void:
+	call_deferred("_enable_collistion", enabled)
+
+func _enable_collistion(enabled: bool) -> void:
 	collision_shape.disabled = !enabled
