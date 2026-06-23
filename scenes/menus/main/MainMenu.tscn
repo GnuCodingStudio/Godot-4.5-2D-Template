@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dpeyhi4f1jd78"]
+[gd_scene format=3 uid="uid://dpeyhi4f1jd78"]
 
 [ext_resource type="Theme" uid="uid://cwahu64hfgl1x" path="res://resources/theme/MenuTheme.tres" id="1_tjl38"]
 [ext_resource type="Script" uid="uid://yefsxlq6n6ht" path="res://scenes/menus/main/MainMenu.gd" id="2_jmfhq"]
@@ -21,7 +21,7 @@ func appear(time: float) -> void:
 	hide()
 "
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=1752518358]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,9 +34,9 @@ theme = ExtResource("1_tjl38")
 script = ExtResource("2_jmfhq")
 metadata/_edit_use_anchors_ = true
 
-[node name="UiContols" parent="." instance=ExtResource("3_m362a")]
+[node name="UiContols" parent="." unique_id=1761113508 instance=ExtResource("3_m362a")]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=634123347]
 material = ExtResource("3_ko0o6")
 layout_mode = 1
 anchors_preset = 15
@@ -46,7 +46,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.583954, 0, 0.695312, 1)
 
-[node name="GlobalMargin" type="MarginContainer" parent="."]
+[node name="GlobalMargin" type="MarginContainer" parent="." unique_id=1657241791]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -57,31 +57,31 @@ theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 40
 
-[node name="Headlines" type="VBoxContainer" parent="GlobalMargin"]
+[node name="Headlines" type="VBoxContainer" parent="GlobalMargin" unique_id=690324896]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="Title" type="Label" parent="GlobalMargin/Headlines"]
+[node name="Title" type="Label" parent="GlobalMargin/Headlines" unique_id=185803153]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"BigTitle"
 text = "GAME_NAME"
 
-[node name="SubTitle" type="Label" parent="GlobalMargin/Headlines"]
+[node name="SubTitle" type="Label" parent="GlobalMargin/Headlines" unique_id=1341165420]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"SubTitle"
 text = "GAME_TAGLINE"
 
-[node name="HSeparator" type="HSeparator" parent="GlobalMargin/Headlines"]
+[node name="HSeparator" type="HSeparator" parent="GlobalMargin/Headlines" unique_id=1552039359]
 layout_mode = 2
 theme_override_constants/separation = 60
 theme_override_styles/separator = SubResource("StyleBoxEmpty_t1ilb")
 
-[node name="TemplateFromGCS" type="Label" parent="GlobalMargin"]
+[node name="TemplateFromGCS" type="Label" parent="GlobalMargin" unique_id=75492320]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 0
@@ -89,7 +89,7 @@ size_flags_vertical = 8
 text = "A Gnu Coding Studio's template"
 script = SubResource("GDScript_b4ev4")
 
-[node name="MenuMargin" type="MarginContainer" parent="."]
+[node name="MenuMargin" type="MarginContainer" parent="." unique_id=541371948]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -101,13 +101,13 @@ theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 40
 
-[node name="Menu" type="VBoxContainer" parent="MenuMargin"]
+[node name="Menu" type="VBoxContainer" parent="MenuMargin" unique_id=1408168944]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 10
 script = ExtResource("5_5nfro")
 
-[node name="StartButton" type="Button" parent="MenuMargin/Menu"]
+[node name="StartButton" type="Button" parent="MenuMargin/Menu" unique_id=844256323]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
@@ -118,7 +118,7 @@ focus_next = NodePath("../CreditsButton")
 focus_previous = NodePath("../QuitButton")
 text = "MAIN_START_BUTTON"
 
-[node name="CreditsButton" type="Button" parent="MenuMargin/Menu"]
+[node name="CreditsButton" type="Button" parent="MenuMargin/Menu" unique_id=1435224021]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
@@ -129,7 +129,7 @@ focus_next = NodePath("../QuitButton")
 focus_previous = NodePath("../StartButton")
 text = "MAIN_CREDITS_BUTTON"
 
-[node name="QuitButton" type="Button" parent="MenuMargin/Menu"]
+[node name="QuitButton" type="Button" parent="MenuMargin/Menu" unique_id=644848807]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
@@ -140,18 +140,18 @@ focus_next = NodePath("../StartButton")
 focus_previous = NodePath("../CreditsButton")
 text = "MAIN_QUIT_BUTTON"
 
-[node name="QuitDialog" parent="." instance=ExtResource("3_pus6v")]
+[node name="QuitDialog" parent="." unique_id=100767684 instance=ExtResource("3_pus6v")]
 unique_name_in_owner = true
 layout_mode = 1
 text = "QUIT_CONFIRM_TEXT"
 confirmButtonText = "QUIT_CONFIRM_BUTTON"
 cancelButtonText = "QUIT_CONFIRM_CANCEL"
 
-[node name="GameConsole" parent="." instance=ExtResource("5_ljn2o")]
+[node name="GameConsole" parent="." unique_id=1756785916 instance=ExtResource("5_ljn2o")]
 visible = false
 auto_help = true
 
-[node name="easter-egg" type="Node" parent="GameConsole" node_paths=PackedStringArray("target")]
+[node name="easter-egg" type="Node" parent="GameConsole" unique_id=391440053 node_paths=PackedStringArray("target")]
 script = ExtResource("7_2time")
 target = NodePath("../../GlobalMargin/TemplateFromGCS")
 function = "appear"
