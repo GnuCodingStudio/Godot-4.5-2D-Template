@@ -68,7 +68,7 @@ ticks_position = 3
 layout_mode = 2
 text = "SETTINGS_AUDIO_MUSIC"
 
-[node name="MusicMasterSlider" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=1529272863]
+[node name="AudioMusicSlider" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=1529272863]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -81,7 +81,7 @@ ticks_position = 3
 layout_mode = 2
 text = "SETTINGS_AUDIO_UI"
 
-[node name="UiMasterSlider" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=151546385]
+[node name="AudioUiSlider" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=151546385]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -94,7 +94,7 @@ ticks_position = 3
 layout_mode = 2
 text = "SETTINGS_AUDIO_SFX"
 
-[node name="SfxMasterSlider" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=2098037805]
+[node name="AudioSfxSlider" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=2098037805]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -109,8 +109,8 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 text = "SETTINGS_BACK_BUTTON"
 
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/AudioMasterSlider" to="." method="_on_audio_slider_value_changed" binds= [0]]
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/MusicMasterSlider" to="." method="_on_audio_slider_value_changed" binds= [1]]
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/UiMasterSlider" to="." method="_on_audio_slider_value_changed" binds= [2]]
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/SfxMasterSlider" to="." method="_on_audio_slider_value_changed" binds= [3]]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/AudioMasterSlider" to="." method="_on_audio_master_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/AudioMusicSlider" to="." method="_on_audio_music_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/AudioUiSlider" to="." method="_on_audio_ui_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/AudioSfxSlider" to="." method="_on_audio_master_value_changed"]
 [connection signal="pressed" from="MarginContainer/BackButton" to="." method="_on_back_button_pressed"]

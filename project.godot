@@ -25,9 +25,10 @@ buses/default_bus_layout="uid://cyxdv4qwyujc8"
 
 [autoload]
 
+SceneTransition="*res://services/transition/SceneTransition.tscn"
+AudioSettingsService="*uid://c3u02wgsfno1d"
 ProgressionService="*res://services/save/ProgressionService.gd"
 UiAudio="*res://components/uicontrols/UIAudio.gd"
-SceneTransition="*res://services/transition/SceneTransition.tscn"
 
 [debug]
 

@@ -6,6 +6,7 @@ extends Control
 
 func _ready():
 	ProgressionService.init()
+	AudioSettingsService.init()
 	menu.animate_buttons_appearance(0.4, 0.2, -100)
 
 

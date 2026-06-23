@@ -25,7 +25,7 @@ func clear():
 	DirAccess.remove_absolute(dir_path + filename)
 
 
-func _load():
+func _load() -> Progression:
 	if FileAccess.file_exists(dir_path + filename):
 		var file = FileAccess.open(dir_path + filename, FileAccess.READ)
 		var loaded_data = _parse(file.get_as_text())
