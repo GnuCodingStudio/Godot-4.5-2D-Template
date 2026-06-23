@@ -2,6 +2,7 @@ key,en,fr
 GAME_NAME,Godot 4.5,Godot 4.5
 GAME_TAGLINE,2D Template,Template 2D
 MAIN_START_BUTTON,START,DÉMARRER
+MAIN_SETTINGS_BUTTON,SETTINGS,RÉGLAGES
 MAIN_CREDITS_BUTTON,CREDITS,CRÉDITS
 MAIN_QUIT_BUTTON,QUIT,QUITTER
 QUIT_CONFIRM_TEXT,"You are quitting the game, are you sure?","Tu vas quitter le jeu, tu es sûr ?"
@@ -12,3 +13,9 @@ CONSOLE_INPUT_SUBMIT,Submit,Envoyer
 CREDITS_TAGLINE,Credits,Crédits
 CREDITS_TITLE_N_AUTHOR,[b]{title}[/b] by [b]{author}[/b],[b]{title}[/b] par [b]{author}[/b]
 CREDITS_BACK_BUTTON,BACK,RETOUR
+SETTINGS_AUDIO,Audio settings,Réglages Audio
+SETTINGS_AUDIO_MASTER,Master,Principal
+SETTINGS_AUDIO_MUSIC,Music,Musique
+SETTINGS_AUDIO_UI,User Interfaces,Interfaces Utilisateurs
+SETTINGS_AUDIO_SFX,SFX,Effets spéciaux
+SETTINGS_BACK_BUTTON,BACK,RETOUR

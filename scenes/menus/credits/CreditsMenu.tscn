@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7p8jls1peqwp"]
+[gd_scene format=3 uid="uid://b7p8jls1peqwp"]
 
 [ext_resource type="Script" uid="uid://wv358b5tk05s" path="res://scenes/menus/credits/CreditsMenu.gd" id="1_35ggl"]
 [ext_resource type="PackedScene" uid="uid://wdqk4jv113lg" path="res://components/uicontrols/UIContols.tscn" id="1_f0kuf"]
@@ -8,7 +8,7 @@
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_el4jv"]
 thickness = 2
 
-[node name="CreditsMenu" type="Control"]
+[node name="CreditsMenu" type="Control" unique_id=1778347457]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,9 +17,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_35ggl")
 
-[node name="UiContols" parent="." instance=ExtResource("1_f0kuf")]
+[node name="UiContols" parent="." unique_id=1839997397 instance=ExtResource("1_f0kuf")]
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=205248484]
 material = ExtResource("1_lx2dq")
 layout_mode = 1
 anchors_preset = 15
@@ -28,7 +28,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GlobalMargin" type="MarginContainer" parent="."]
+[node name="GlobalMargin" type="MarginContainer" parent="." unique_id=2054036510]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,39 +40,39 @@ theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 40
 
-[node name="VBox" type="VBoxContainer" parent="GlobalMargin"]
+[node name="VBox" type="VBoxContainer" parent="GlobalMargin" unique_id=307704067]
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="Title" type="Label" parent="GlobalMargin/VBox"]
+[node name="Title" type="Label" parent="GlobalMargin/VBox" unique_id=1446253159]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"BigTitle"
 text = "GAME_NAME"
 
-[node name="SubTitle" type="Label" parent="GlobalMargin/VBox"]
+[node name="SubTitle" type="Label" parent="GlobalMargin/VBox" unique_id=668553637]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"SubTitle"
 text = "CREDITS_TAGLINE"
 
-[node name="Separator" type="HSeparator" parent="GlobalMargin/VBox"]
+[node name="Separator" type="HSeparator" parent="GlobalMargin/VBox" unique_id=85834896]
 layout_mode = 2
 theme_override_constants/separation = 10
 theme_override_styles/separator = SubResource("StyleBoxLine_el4jv")
 
-[node name="Scroll" type="ScrollContainer" parent="GlobalMargin/VBox"]
+[node name="Scroll" type="ScrollContainer" parent="GlobalMargin/VBox" unique_id=592684099]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="List" type="VBoxContainer" parent="GlobalMargin/VBox/Scroll"]
+[node name="List" type="VBoxContainer" parent="GlobalMargin/VBox/Scroll" unique_id=1961359703]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 30
 
-[node name="CreditsItem01" parent="GlobalMargin/VBox/Scroll/List" instance=ExtResource("1_gd18q")]
+[node name="CreditsItem01" parent="GlobalMargin/VBox/Scroll/List" unique_id=861113383 instance=ExtResource("1_gd18q")]
 layout_mode = 2
 size_flags_horizontal = 1
 title = "Game Project Template"
@@ -80,7 +80,7 @@ author = "Gnu Coding Studio"
 link = "https://github.com/GnuCodingStudio/"
 link_text = "github.com / GnuCodingStudio"
 
-[node name="BackButton" type="Button" parent="GlobalMargin"]
+[node name="BackButton" type="Button" parent="GlobalMargin" unique_id=1420416788]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8

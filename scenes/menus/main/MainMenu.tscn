@@ -113,20 +113,31 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 focus_neighbor_top = NodePath("../QuitButton")
-focus_neighbor_bottom = NodePath("../CreditsButton")
-focus_next = NodePath("../CreditsButton")
+focus_neighbor_bottom = NodePath("../SettingsButton")
+focus_next = NodePath("../SettingsButton")
 focus_previous = NodePath("../QuitButton")
 text = "MAIN_START_BUTTON"
+
+[node name="SettingsButton" type="Button" parent="MenuMargin/Menu" unique_id=1356091281]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../StartButton")
+focus_neighbor_bottom = NodePath("../CreditsButton")
+focus_next = NodePath("../CreditsButton")
+focus_previous = NodePath("../StartButton")
+text = "MAIN_SETTINGS_BUTTON"
 
 [node name="CreditsButton" type="Button" parent="MenuMargin/Menu" unique_id=1435224021]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-focus_neighbor_top = NodePath("../StartButton")
+focus_neighbor_top = NodePath("../SettingsButton")
 focus_neighbor_bottom = NodePath("../QuitButton")
 focus_next = NodePath("../QuitButton")
-focus_previous = NodePath("../StartButton")
+focus_previous = NodePath("../SettingsButton")
 text = "MAIN_CREDITS_BUTTON"
 
 [node name="QuitButton" type="Button" parent="MenuMargin/Menu" unique_id=644848807]
@@ -159,6 +170,7 @@ help = "Show info about the template used to create this game."
 parameters = Array[String](["time:float:0.6"])
 
 [connection signal="pressed" from="MenuMargin/Menu/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MenuMargin/Menu/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="MenuMargin/Menu/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="MenuMargin/Menu/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="on_confirm" from="QuitDialog" to="." method="_on_quit_dialog_confirmed"]

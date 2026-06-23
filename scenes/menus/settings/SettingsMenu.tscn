@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://dxp5b65my5u45"]
+
+[ext_resource type="Script" uid="uid://yqoug3ej4sl4" path="res://scenes/menus/settings/SettingsMenu.gd" id="1_pk8vq"]
+[ext_resource type="PackedScene" uid="uid://wdqk4jv113lg" path="res://components/uicontrols/UIContols.tscn" id="2_s14qa"]
+[ext_resource type="Material" uid="uid://dygopb8fee5xt" path="res://scenes/menus/MenuBackground.tres" id="3_smtfq"]
+
+[node name="Settings" type="Control" unique_id=1099944851]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pk8vq")
+
+[node name="UiContols" parent="." unique_id=2105143255 instance=ExtResource("2_s14qa")]
+
+[node name="Background" type="ColorRect" parent="." unique_id=522801394]
+material = ExtResource("3_smtfq")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=195355916]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=146546853]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=332410752]
+layout_mode = 2
+theme_type_variation = &"SubTitle"
+text = "SETTINGS_AUDIO"
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer" unique_id=1297867012]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 4
+columns = 2
+
+[node name="MasterLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=2140393243]
+layout_mode = 2
+text = "SETTINGS_AUDIO_MASTER"
+
+[node name="AudioMasterSlider" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=774862966]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.5
+step = 0.05
+ticks_position = 3
+
+[node name="MusicLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=1018283314]
+layout_mode = 2
+text = "SETTINGS_AUDIO_MUSIC"
+
+[node name="MusicMasterSlider" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=1529272863]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.5
+step = 0.05
+ticks_position = 3
+
+[node name="UiLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=880053878]
+layout_mode = 2
+text = "SETTINGS_AUDIO_UI"
+
+[node name="UiMasterSlider" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=151546385]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.5
+step = 0.05
+ticks_position = 3
+
+[node name="SfxLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=513647223]
+layout_mode = 2
+text = "SETTINGS_AUDIO_SFX"
+
+[node name="SfxMasterSlider" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=2098037805]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.5
+step = 0.05
+ticks_position = 3
+
+[node name="BackButton" type="Button" parent="MarginContainer" unique_id=1646433742]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "SETTINGS_BACK_BUTTON"
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/AudioMasterSlider" to="." method="_on_audio_slider_value_changed" binds= [0]]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/MusicMasterSlider" to="." method="_on_audio_slider_value_changed" binds= [1]]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/UiMasterSlider" to="." method="_on_audio_slider_value_changed" binds= [2]]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/SfxMasterSlider" to="." method="_on_audio_slider_value_changed" binds= [3]]
+[connection signal="pressed" from="MarginContainer/BackButton" to="." method="_on_back_button_pressed"]

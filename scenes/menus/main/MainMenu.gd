@@ -13,6 +13,10 @@ func _on_start_button_pressed():
 	print("Start button clicked")
 
 
+func _on_settings_button_pressed() -> void:
+	SceneTransition.change_scene("res://scenes/menus/settings/SettingsMenu.tscn")
+
+
 func _on_credits_button_pressed():
 	SceneTransition.change_scene("res://scenes/menus/credits/CreditsMenu.tscn")
 
