@@ -6,7 +6,7 @@ extends Control
 
 #region logic
 
-func change_scene(scene_path: String, block: Callable = func():pass) -> void:
+func change_scene(scene_path: String, block: Callable = func() -> void: pass) -> void:
 	animation_player.play("fade_out")
 	await animation_player.animation_finished
 	block.call()

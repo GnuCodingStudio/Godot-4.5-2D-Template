@@ -20,9 +20,9 @@ func _ready() -> void:
 	gather_area.collision_mask = collision_mask
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	for magneted in _magneted_bodies:
-		var direction = global_position - magneted.global_position
+		var direction := global_position - magneted.global_position
 		magneted.apply_central_force(direction.normalized() * magnet_speed)
 
 #endregion built-in
@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 #region signals
 
 func _on_body_magneted(body: Node2D) -> void:
-	var magnetable_children = body.find_children("*", "Magnetable", false)
+	var magnetable_children := body.find_children("*", "Magnetable", false)
 	if not magnetable_children.is_empty():
 		_magneted_bodies.append(body)
 

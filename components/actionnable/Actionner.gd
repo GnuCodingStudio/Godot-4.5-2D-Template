@@ -9,7 +9,7 @@ var _targeted_actionnable: Actionnable
 #region built-in
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	_target_nearest_resource()
 	if Input.is_action_just_pressed("action_activate"):
 		_activate_targeted_resource()
@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 #region logic
 
 func _target_nearest_resource() -> void:
-	var actionnables = get_overlapping_bodies().map(_get_actionnable_or_null).filter(_not_null)
+	var actionnables := get_overlapping_bodies().map(_get_actionnable_or_null).filter(_not_null)
 	actionnables.sort_custom(_sort_by_distance)
 
 	if actionnables.size() > 0:
@@ -30,7 +30,7 @@ func _target_nearest_resource() -> void:
 
 
 func _get_actionnable_or_null(body: Node2D) -> Actionnable:
-	var actionnables = body.find_children("*", "Actionnable", false)
+	var actionnables := body.find_children("*", "Actionnable", false)
 	if not actionnables.is_empty():
 		if actionnables[0].is_actionnable():
 			return actionnables[0]
@@ -38,8 +38,8 @@ func _get_actionnable_or_null(body: Node2D) -> Actionnable:
 
 
 func _sort_by_distance(a: Node2D, b: Node2D) -> bool:
-	var distance_to_a = a.global_position.distance_to(self.global_position)
-	var distance_to_b = b.global_position.distance_to(self.global_position)
+	var distance_to_a := a.global_position.distance_to(self.global_position)
+	var distance_to_b := b.global_position.distance_to(self.global_position)
 	return (distance_to_a < distance_to_b)
 
 

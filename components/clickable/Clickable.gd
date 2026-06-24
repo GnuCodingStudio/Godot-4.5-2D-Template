@@ -13,20 +13,20 @@ var enabled := true
 #region built-in
 
 func _ready() -> void:
-	var area_children = find_children("*", "Area2D")
+	var area_children := find_children("*", "Area2D")
 	if area_children.is_empty():
 		assert(false, "Clickable must contain Area2D as child")
 	if area_children.size() > 1:
 		assert(false, "Clickable must only contain ONE Area2D")
 
-	var clickable_area = area_children[0]
+	var clickable_area: Area2D = area_children[0]
 	clickable_area.mouse_entered.connect(_mouse_entered)
 	clickable_area.mouse_exited.connect(_mouse_exited)
 
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
-		var mouse_event = event as InputEventMouseButton
+		var mouse_event := event as InputEventMouseButton
 		if mouse_event.button_index == MOUSE_BUTTON_LEFT and mouse_event.is_released() and _mouse_hover:
 			click.emit()
 
@@ -38,12 +38,12 @@ func _input(event: InputEvent) -> void:
 func _mouse_entered() -> void:
 	if not enabled: return
 	_mouse_hover = true
-	get_parent().modulate = Color.GRAY
+	(get_parent() as Node2D).modulate = Color.GRAY
 
 
 func _mouse_exited() -> void:
 	if not enabled: return
 	_mouse_hover = false
-	get_parent().modulate = Color.WHITE
+	(get_parent() as Node2D).modulate = Color.WHITE
 
 #endregion signal

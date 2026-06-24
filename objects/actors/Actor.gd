@@ -1,10 +1,10 @@
 extends RigidBody2D
 class_name Actor
 
-@export var speed = 300.0
+@export var speed := 300.0
 
-@onready var animated_sprite = %AnimatedSprite
-@onready var collision_shape = %CollisionShape
+@onready var animated_sprite: AnimatedSprite2D = %AnimatedSprite
+@onready var collision_shape: CollisionShape2D = %CollisionShape
 
 
 var state := State.IDLE:
@@ -32,14 +32,14 @@ enum State {
 }
 
 
-func _process(delta):
+func _process(_delta: float) -> void:
 	if moving_direction == Vector2.ZERO:
 		state = State.IDLE
 	else:
 		state = State.MOVING
 
 
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:
 	move_and_collide(moving_direction * speed * delta)
 
 
@@ -52,31 +52,34 @@ func _direction_name() -> String:
 		_: return "Down"
 
 
-func _update_animation():
+func _update_animation() -> void:
 	var state_name := ""
 	match state:
 		State.IDLE: state_name = "Idle"
 		State.MOVING: state_name = "Move"
 
-	var animation_name = state_name + _direction_name()
+	var animation_name := state_name + _direction_name()
 	animated_sprite.play(animation_name)
 
 
-func _on_state_changed():
+func _on_state_changed() -> void:
 	_update_animation()
 
 
-func _on_moving_direction_changed():
+func _on_moving_direction_changed() -> void:
 	if moving_direction == Vector2.ZERO or moving_direction == facing_direction:
 		return
 
-	if facing_direction.x == sign(moving_direction.x):
-		facing_direction = Vector2(0, sign(moving_direction.y))
-	elif facing_direction.y == sign(moving_direction.y):
-		facing_direction = Vector2(sign(moving_direction.x), 0)
+	var x_sign := signf(moving_direction.x)
+	var y_sign := signf(moving_direction.y)
+
+	if facing_direction.x == x_sign:
+		facing_direction = Vector2(0, y_sign)
+	elif facing_direction.y == y_sign:
+		facing_direction = Vector2(x_sign, 0)
 	else:
 		facing_direction = moving_direction
 
 
-func _on_facing_direction_changed():
+func _on_facing_direction_changed() -> void:
 	_update_animation()

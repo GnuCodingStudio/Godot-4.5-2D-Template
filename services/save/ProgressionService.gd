@@ -1,34 +1,34 @@
 extends Node
 
 
-var dir_path = "user://saves/"
-var filename = "progression.json"
+var dir_path := "user://saves/"
+var filename := "progression.json"
 
 var data: Progression
 
 
-func init():
+func init() -> void:
 	DirAccess.make_dir_recursive_absolute(dir_path)
 	data = _load()
 
 
-func save(progression: Progression):
+func save(progression: Progression) -> void:
 	data = progression
 	
-	var content = _serialize(progression)
-	var file = FileAccess.open(dir_path + filename, FileAccess.WRITE)
+	var content := _serialize(progression)
+	var file := FileAccess.open(dir_path + filename, FileAccess.WRITE)
 	file.store_string(content)
 	file.close()
 
 
-func clear():
+func clear() -> void:
 	DirAccess.remove_absolute(dir_path + filename)
 
 
 func _load() -> Progression:
 	if FileAccess.file_exists(dir_path + filename):
-		var file = FileAccess.open(dir_path + filename, FileAccess.READ)
-		var loaded_data = _parse(file.get_as_text())
+		var file := FileAccess.open(dir_path + filename, FileAccess.READ)
+		var loaded_data: Progression = _parse(file.get_as_text())
 		file.close()
 		return loaded_data
 	else:
@@ -42,7 +42,7 @@ func _serialize(progression: Progression) -> String:
 
 
 func _parse(json: String) -> Progression:
-	var dict = JSON.parse_string(json)
+	var dict: Dictionary = JSON.parse_string(json)
 	return Progression.new(
 		dict["coins"]
 	)

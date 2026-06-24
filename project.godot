@@ -32,6 +32,11 @@ UiAudio="*res://components/uicontrols/UIAudio.gd"
 
 [debug]
 
+gdscript/warnings/untyped_declaration=1
+gdscript/warnings/unsafe_property_access=1
+gdscript/warnings/unsafe_method_access=1
+gdscript/warnings/unsafe_cast=1
+gdscript/warnings/unsafe_call_argument=1
 shapes/collision/shape_color=Color(1, 1, 1, 0.42)
 
 [display]

@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bb1d5ajohbgpi"]
+[gd_scene format=3 uid="uid://bb1d5ajohbgpi"]
 
 [ext_resource type="Script" uid="uid://3vjfrfnaxr1b" path="res://scenes/menus/credits/CreditsItem.gd" id="1_7036g"]
 
-[node name="CreditsItem" type="VBoxContainer"]
+[node name="CreditsItem" type="VBoxContainer" unique_id=561434062]
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 94.0
@@ -10,7 +10,7 @@ grow_horizontal = 2
 size_flags_horizontal = 4
 script = ExtResource("1_7036g")
 
-[node name="Title" type="RichTextLabel" parent="."]
+[node name="Title" type="RichTextLabel" parent="." unique_id=1771245110]
 unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
@@ -23,7 +23,7 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="LinkButton" type="LinkButton" parent="."]
+[node name="LinkButton" type="LinkButton" parent="." unique_id=907253047]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
