@@ -4,6 +4,7 @@ extends Control
 @onready var start_button: Button = %StartButton
 @onready var menu: Menu = %Menu
 
+
 func _ready() -> void:
 	ProgressionService.init()
 	AudioSettingsService.init()
@@ -11,7 +12,7 @@ func _ready() -> void:
 
 
 func _on_start_button_pressed() -> void:
-	print("Start button clicked")
+	SceneTransition.change_scene("res://scenes/levels/main.tscn")
 
 
 func _on_settings_button_pressed() -> void:

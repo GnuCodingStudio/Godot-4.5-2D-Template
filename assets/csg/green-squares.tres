@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cg4clrr1566be"]
+
+[ext_resource type="Texture2D" uid="uid://pkbf7tgpxk80" path="res://assets/csg/green-squares.png" id="1_1mabu"]
+
+[resource]
+albedo_color = Color(0.5042184, 0.50421846, 0.50421846, 1)
+albedo_texture = ExtResource("1_1mabu")
+uv1_triplanar = true

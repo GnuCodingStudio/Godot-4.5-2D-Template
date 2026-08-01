@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://btocryl1so247"]
+
+[ext_resource type="Material" uid="uid://cg4clrr1566be" path="res://assets/csg/green-squares.tres" id="1_eqqp1"]
+[ext_resource type="Script" uid="uid://devijfv0254dc" path="res://objects/player.gd" id="1_ykyjo"]
+[ext_resource type="Script" uid="uid://d0fh34d3mwse8" path="res://objects/third_person_camera.gd" id="3_uxov2"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_n14tl"]
+material = ExtResource("1_eqqp1")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n14tl"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=52852777]
+collision_mask = 7
+script = ExtResource("1_ykyjo")
+
+[node name="Player" type="MeshInstance3D" parent="." unique_id=263251746]
+unique_name_in_owner = true
+mesh = SubResource("CapsuleMesh_n14tl")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1281884087]
+shape = SubResource("CapsuleShape3D_n14tl")
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=1597867094]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("3_uxov2")
+
+[node name="SpringArm" type="SpringArm3D" parent="CameraPivot" unique_id=1397793613]
+collision_mask = 6
+spring_length = 5.0
+
+[node name="Camera" type="Camera3D" parent="CameraPivot/SpringArm" unique_id=540238708]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 2.9802322e-08, 0, -2.9802322e-08, 1, 0, -1.1920929e-07, 4)
